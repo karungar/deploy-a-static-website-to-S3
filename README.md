@@ -1,11 +1,11 @@
-# How to deploy a static site to Amazon S3
+# Cloud Resume Challenge: How to deploy a static site to Amazon S3
 ![Cloud_resume_architectural_diagram](https://github.com/karungar/deploy-a-static-website-to-S3/assets/160833948/d413d9a5-8e89-4674-9f18-3417ea748c17)
-# Cloud Resume Challenge 
+ 
+**Introduction**
 
-Introduction
-The project involves hosting a static website on Amazon simple storage service (S3) bucket. 
-CloudFront was be used for distribution. SSL/TLS from AWS Certificate Manager is used for 
-secure access to the Amazon S3 bucket. Amazon Route 53 was used for domain naming. CloudFormation will be use for deployment.                                                                                           
+The project involves hosting a static website on Amazon Simple Storage Service (S3) bucket. 
+CloudFront was used for distribution. SSL/TLS from AWS Certificate Manager is used for secure access to the Amazon S3 bucket.
+The domain was purchased from (https://my.hostafrica.com/) Amazon Route 53 was used for creating the hosted zones.                                                                               
 
 Step-by-step guidelines
 
@@ -14,9 +14,10 @@ Step-by-step guidelines
 1. Sign up for an AWS account
 2. Set up an IAM user with administrative access.
 3. Acquring a domain name
-4. Configure Route 53 for Domain Naming.
+4. Configure Route 53 hosted zones.
 
 <!-- Configuring Amazon Route 53  -->
+1. From the AWS Management Console search Route 53
 
 1. 
 
@@ -24,38 +25,33 @@ Step-by-step guidelines
 
 1. Open the AWS Management console
 2. In the services menu go to S3 and choose "Create Bucket"
-3. Select Bucket type as "General Purpose" and Type the "Bucket Name" and the 
-    region example "us-east-1"
-5. Do not uncheck the box in the option of "Block Public Access settings" because you 
-    will restrict access to CloudFront.
-6. Keep everything default and click on "Create Bucket".
-7. To set up the settings for static website do not turn on static website hosting.
-9. Type the name of index.html document that has your resume. You could also include 
-    an error.html document.
-10. Upload the css file, index.html file and the error file.
-11. Set the bucket permissions by navigating to the "Permissions" tab.
-    Click on the edit button and create a policy as to allow CloudFront service principle.
-    In the "Resource" input the Amazon Resource Name of your bucket.
-12. Run the Static website URL on your browser. It should not display "Access 
-    Denied" because you did not allow public access.
+   <img width="890" alt="Create Bucket" src="https://github.com/karungar/deploy-a-static-website-to-S3/assets/160833948/232c3bc5-3910-4938-aac7-a6a14ae34b95">
+4. Select bucket type as "General Purpose" and Type the "Bucket Name" and the region.
+    <img width="612" alt="Create a bucket" src="https://github.com/karungar/deploy-a-static-website-to-S3/assets/160833948/7ad327b3-e0de-46ee-803c-60ab7b899d10">
+5. Do not uncheck the box in the option of "Block Public Access settings" because you will restrict access to CloudFront.
+   <img width="462" alt="block public access" src="https://github.com/karungar/deploy-a-static-website-to-S3/assets/160833948/5c3c7f99-bccf-4b70-8ac4-1dd2e52cec86">
+7. Keep everything default and click on "Create Bucket".
+   
 
 
 <!-- Creating a CloudFront Distribution -->
-1. From the AWS Management Console services menu, select CloudFront under Network
-    and Content Delivery.
+1. From the AWS Management Console services menu, select CloudFront under Network and Content Delivery.
 2. Navigate to the left and select Distributions tab.
-3. Now click on Create Distribution button. Configure the distribution as follows:
+3. Now click on Create Distribution button.
+   <img width="613" alt="CloudFront" src="https://github.com/karungar/deploy-a-static-website-to-S3/assets/160833948/c5313071-3ba1-4a52-91cc-007a61e20900">
+
+5. Configure the distribution as follows:
     Origin Domain Name: Select the S3 Bucket you created.
     Enter a name for this origin(For Example CloudResumeChallenge)
-4. Choose Origin Access Control(Recommended)
+6. Choose Origin Access Control(Recommended)
     Create OAC. In the description box write "This OAC restricts bucket access to CloudFront" 
-5. For WAF select "Do not enable security protection"
-6. Keep the rest of the settings as default, scroll down and click "Create Distribution"
+7. For WAF select "Do not enable security protection"
+8. Keep the rest of the settings as default, scroll down and click "Create Distribution"
     Wait for the CloudFront to be enabled and deployed. The Domain name that CloudFront 
     assigns to your distribution appears in the list of distributions.
-7. A banner requiring the S3 bucket policy to be updated will pop up. Choose the Copy policy.
-8. In the same banner choose the link "Go to the s3 bucket permissions to update policy". Paste the policy in the "Edit statement" field. Save the changes.
-9. Return to the CloudFront console and review the details section for your new distribution. When the distribution is done deploying, the "Last modified" field changes from "Deploying" to a data and time. Record the domain name that CloudFront assigns to your distribution. 
+9. A banner requiring the S3 bucket policy to be updated will pop up. Choose the Copy policy.
+10. In the same banner choose the link "Go to the s3 bucket permissions to update policy". Paste the policy in the "Edit statement" field. Save the changes.
+11. Return to the CloudFront console and review the details section for your new distribution. When the distribution is done deploying, the "Last modified" field changes from "Deploying" to a data and time. Record the domain name that CloudFront assigns to your distribution. 
 Copy it on a browser tab and edit the URL by adding /index.html at the end. It should display the index.html file present in the bucket.
 
 <!-- ACM Configuration to enable HTTPS-->
