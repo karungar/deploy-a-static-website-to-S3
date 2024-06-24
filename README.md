@@ -78,7 +78,7 @@ Copy it on a browser tab and edit the URL by adding /index.html at the end. It s
 
 Project Challenges
 1. Time constraints
-2. Limited Knowledge of HTML and CSS. I used a resume template belonging to Zablon instead of creting one
+2. Limited Knowledge of HTML and CSS. I used a resume template belonging to [Zablon](https://github.com/zablon-oigo)instead of creting one
     because time could not allow me to learn from scratch and finish the project on time. I am still learning the basics of HTML and CSS from some resources shared in my channel.
 3. Limited knowledge of Git and GitHub actions. I asked my peers at Team Jade for assistance and also read 
     widely on the topics.
