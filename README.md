@@ -67,21 +67,28 @@ The domain was purchased from (https://my.hostafrica.com/) Amazon Route 53 was u
 
 Project Challenges
 1. Time constraints
-2. Limited Knowledge of HTML and CSS. I used a resume template belonging to [Zablon](https://github.com/zablon-oigo)instead of creating one
+2. Limited Knowledge of HTML and CSS. I used a resume template belonging to [Zablon](https://github.com/zablon-oigo) instead of creating one
    because time could not allow me to learn from scratch and finish the project on time. I am still learning the basics of HTML and CSS
    from some resources shared in my channel.
 4. Limited knowledge of Git and GitHub actions. I asked my peers at Team Jade for assistance and also read widely on the topics.
-   I have also used (https://www.whizlabs.com/learn/course/aws-beginners-training-hands-on-labs) to understand how to configure the website.
+   I have also used [Whizlabs](https://www.whizlabs.com/learn/course/aws-beginners-training-hands-on-labs) to understand how to configure the website.
 
 Key Takeaways
 1. One of the key takeawyas from this challenge is that I should face my fears and use every opportunity to 
-    learn something new. 
-2.Main skills acquired are;
-    -Drawing architectural diagrams using draw.io
-    -Hosting a static website on Amazon Simple Storage Service
-    -Configuring CloudFront as the website distribution
-    -Configuring Amazon Route53 
-    -How to acquire a domain name 
+    learn something new.
+
+2. Main skills acquired are
+  
+    Drawing architectural diagrams using draw.io
+    
+    Hosting a static website on Amazon Simple Storage Service
+    
+    Configuring CloudFront as the website distribution
+    
+    Configuring Amazon Route53 
+    
+    How to acquire a domain name 
+    
  3. I have networked with my peers at CloudmyTribe and built collaborations.
 
 Resources
